@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 import { db } from "@/configFirebase";
 import { useSelector } from "react-redux";
 import { selectEmail } from "@/redux/slice/authSlice";
@@ -7,14 +7,34 @@ import { selectEmail } from "@/redux/slice/authSlice";
 const Incomes = () => {
   const userEmail = useSelector(selectEmail);
   const [income, setIncome] = useState({
+    id: "",
     titulo: "",
     valor: "",
   });
   const [data, setData] = useState(null);
 
   const handleChange = (e) => {
-    setIncome({ ...income, [e.target.name]: e.target.value });
+    setIncome({ ...income, [e.target.name]: e.target.value, id: +new Date() });
   };
+  async function eliminarTarea(idTareaAeliminar) {
+    //crear nuevo array de tareas
+    const nvoArrayTareas = data.moves.incomes.filter(
+      (objetoTarea) => objetoTarea.id !== idTareaAeliminar
+    );
+
+    console.log(nvoArrayTareas);
+
+    const x = data;
+    delete x.moves.incomes;
+    console.log(x);
+    x.moves.incomes = nvoArrayTareas;
+    console.log(data);
+
+    // actualizar bd
+
+    const docRef = doc(db, "usuarios", userEmail);
+    updateDoc(docRef, data);
+  }
 
   const addDb = async (e) => {
     e.preventDefault();
@@ -38,7 +58,7 @@ const Incomes = () => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [data]);
   return (
     <>
       <form className="pt-40">
@@ -67,6 +87,7 @@ const Incomes = () => {
             <div key={index}>
               <div>{r.titulo}</div>
               <div>{r.valor}</div>
+              <button onClick={() => eliminarTarea(r.id)}>eliminar</button>
             </div>
           ))}
         </div>

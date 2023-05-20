@@ -35,7 +35,7 @@ const Balance = () => {
   useEffect(() => {
     async function fetch() {
       const response = await buscarDocumentoOCrearDocumento(userEmail);
-      console.log(response);
+      console.log("a", response);
     }
 
     fetch();

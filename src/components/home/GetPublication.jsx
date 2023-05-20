@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import { db } from "@/configFirebase";
 import { collection, getDocs } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 import { v4 } from "uuid";
 import { MdLibraryAdd } from "react-icons/md";
@@ -40,7 +41,9 @@ const GetPublication = () => {
             <h2 className="text-3xl capitalize ">{publication.title}</h2>
             <img src={publication.urlImg} alt="" className="rounded-xl" />
             <p>{publication.description}</p>
-            <button className="btn btn-primary">detalles</button>
+            <Link to={`/publication/${publication.id}`}>
+              <button className="btn btn-primary">detalles</button>
+            </Link>
           </div>
         ))}
       </div>

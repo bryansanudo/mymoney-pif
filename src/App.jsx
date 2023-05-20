@@ -1,4 +1,5 @@
 import Header from "@/components/header/Header";
+import Details from "@/components/home/Details";
 
 import {
   Home,
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/publication/:id" element={<Details />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/incomes" element={<Incomes />} />
           <Route path="/spends" element={<Spends />} />

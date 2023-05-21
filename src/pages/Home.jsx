@@ -9,11 +9,7 @@ const Home = () => {
       <Section>
         <Slider />
       </Section>
-      <Section
-        name="seccion 2"
-        title="seccion 2"
-        subtitle=" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat molestiae dolore dolor nam aliquam cumque repellendus necessitatibus maiores minima repellat quam reiciendis facere voluptates sed beatae, et omnis consectetur deserunt."
-      >
+      <Section title="Publicaciones">
         <GetPublication />
         <Footer />
       </Section>

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import { db } from "@/configFirebase";
 import { collection, getDocs } from "firebase/firestore";
+import { FaUserCircle } from "react-icons/fa";
 import Section from "@/components/common/Section";
 
 const Home = () => {
@@ -34,8 +35,8 @@ const Home = () => {
               key={user.id}
               className="shadow-lg shadow-black rounded-xl p-4 flex flex-col gap-4"
             >
-              <h2 className="text-lg capitalize ">{user.id}</h2>
-              <img src="/vite.svg" alt="" className="rounded-xl h-[30px]  " />
+              <h2 className="text-lg capitalize font-bold ">{user.id}</h2>
+              <FaUserCircle className="w-full text-4xl text-primary" />
             </div>
           ))}
         </div>

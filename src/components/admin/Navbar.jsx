@@ -1,20 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebook } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
+import { AiFillFileAdd } from "react-icons/ai";
 
 const Navbar = () => {
   return (
     <>
-      <ul className="menu bg-base-100  p-2 rounded-box  ">
+      <ul className="menu bg-gray-300 h-full">
         <li>
           <Link to="home">
-            <FaFacebook />
+            <FaUserCircle className="text-4xl text-primary" />
             Usuarios
           </Link>
         </li>
         <li>
           <Link to="add-product">
-            <FaFacebook />
+            <AiFillFileAdd className="text-4xl text-primary" />
             Publicar
           </Link>
         </li>

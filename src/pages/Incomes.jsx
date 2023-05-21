@@ -96,12 +96,12 @@ const Incomes = () => {
                   key={index}
                   className="flex flex-col md:flex-row p-4 rounded-xl justify-between items-center shadow-green-500 shadow-md gap-4"
                 >
-                  <div className="flex">
-                    <span className="mr-2">Titulo:</span>
-                    <span className="capitalize">{r.titulo}</span>
-                  </div>
-                  <div className="flex">
-                    <span>Valor: $</span>
+                  <span className="capitalize font-bold text-lg">
+                    {r.titulo}
+                  </span>
+
+                  <div className="flex text-lg font-bold">
+                    <span> $</span>
                     <span>{r.valor}</span>
                   </div>
                   <button onClick={() => eliminarTarea(r.id)}>

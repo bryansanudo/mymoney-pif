@@ -10,7 +10,7 @@ const Admin = () => {
   return (
     <>
       <div className="pt-24 md:pt-0 md:grid md:grid-cols-5 h-screen ">
-        <div className="md:mt-24 bg-red-500 cols-span-1 ">
+        <div className="md:mt-24 cols-span-1 ">
           <Navbar />
         </div>
         <div className="md:mt-24 col-span-4">

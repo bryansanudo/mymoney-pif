@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { TbDoorExit } from "react-icons/tb";
-import { RiUserStarFill } from "react-icons/ri";
+import { FaUserCircle } from "react-icons/fa";
 import { signOut } from "firebase/auth";
 import { auth } from "@/configFirebase";
 import { toast } from "react-toastify";
@@ -22,8 +22,8 @@ const HeaderDesktop = ({ activeLink, displayName }) => {
       <div className="hidden md:flex justify-between mx- gap-8">
         <ul className="flex gap-6  items-center justify-center">
           <AdminOnlyRoute>
-            <li>
-              <Link to="admin/home">Admin</Link>
+            <li className="hover:text-primary hover:scale-105 duration-400">
+              <NavLink to="admin/home">Admin</NavLink>
             </li>
           </AdminOnlyRoute>
 
@@ -78,8 +78,8 @@ const HeaderDesktop = ({ activeLink, displayName }) => {
           <ShowOnLogin>
             <li>
               <div className="flex items-center justify-center gap-1  capitalize">
-                Hola,<span className="text-primary">{displayName}</span>
-                <RiUserStarFill className="text-3xl" />
+                Hola,{displayName}
+                <FaUserCircle className="text-3xl text-primary" />
               </div>
             </li>
           </ShowOnLogin>

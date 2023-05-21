@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import { storage } from "@/configFirebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
+import { AiFillFileAdd } from "react-icons/ai";
 
 const AddProduct = () => {
   const [file, setFile] = useState({
@@ -96,7 +97,9 @@ const AddProduct = () => {
             onChange={handleChange}
             value={file.link}
           />
-          <button className="btn btn-primary w-full">Crear</button>
+          <button type="submit">
+            <AiFillFileAdd className="text-primary text-5xl mt-2 hover:scale-150 duration-300" />
+          </button>
         </form>
       </Section>
     </>

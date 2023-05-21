@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { TbDoorExit } from "react-icons/tb";
 import { FaUserCircle } from "react-icons/fa";
 import { signOut } from "firebase/auth";
@@ -8,7 +8,9 @@ import { ShowOnLogin, ShowOnLogout } from "@/components/HiddenLink";
 import AdminOnlyRoute from "@/components/AdminOnlyRoute";
 
 const HeaderDesktop = ({ activeLink, displayName }) => {
+  const redirect = useNavigate();
   const logout = () => {
+    redirect("/inicio");
     signOut(auth)
       .then(() => {
         toast.success("Logout Successfully.");

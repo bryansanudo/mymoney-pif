@@ -6,10 +6,10 @@ import GetPublication from "@/components/home/GetPublication";
 const Home = () => {
   return (
     <>
-      <Section>
+      <Section title="Inicio">
         <Slider />
       </Section>
-      <Section title="Publicaciones">
+      <Section>
         <GetPublication />
         <Footer />
       </Section>

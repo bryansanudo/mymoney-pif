@@ -76,13 +76,11 @@ const HeaderDesktop = ({ activeLink, displayName }) => {
           </ShowOnLogout>
 
           <ShowOnLogin>
-            <li className="hover:text-primary hover:scale-105 duration-400">
-              <NavLink className={activeLink} to="/user-profile">
-                <div className="flex items-center justify-center gap-1">
-                  Hola,{displayName}
-                  <RiUserStarFill className="text-3xl" />
-                </div>
-              </NavLink>
+            <li>
+              <div className="flex items-center justify-center gap-1  capitalize">
+                Hola,<span className="text-primary">{displayName}</span>
+                <RiUserStarFill className="text-3xl" />
+              </div>
             </li>
           </ShowOnLogin>
           <ShowOnLogin>

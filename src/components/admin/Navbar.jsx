@@ -9,25 +9,13 @@ const Navbar = () => {
         <li>
           <Link to="home">
             <FaFacebook />
-            Inicio
-          </Link>
-        </li>
-        <li>
-          <Link to="all-products">
-            <FaFacebook />
-            Productos
+            Usuarios
           </Link>
         </li>
         <li>
           <Link to="add-product">
             <FaFacebook />
-            Agregar
-          </Link>
-        </li>
-        <li>
-          <Link to="orders">
-            <FaFacebook />
-            Pedidos
+            Publicar
           </Link>
         </li>
       </ul>

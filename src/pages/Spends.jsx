@@ -66,7 +66,7 @@ const Spends = () => {
   return (
     <>
       <Section title="Mis Gastos">
-        <div className="container px-5 py-28 mx-auto flex flex-col items-center justify-between">
+        <div className="container px-5  mx-auto flex flex-col items-center justify-between">
           <form className="mb-10 flex flex-col md:flex-row items-center gap-2">
             <input
               type="text"
@@ -92,7 +92,7 @@ const Spends = () => {
             </button>
           </form>
           {data ? (
-            <div className="w-full flex flex-col gap-16">
+            <div className="max-w-[1000px] w-full flex flex-col shadow-lg  shadow-black p-10 rounded-xl gap-16">
               {data.moves.spends?.map((r, index) => (
                 <div
                   key={index}

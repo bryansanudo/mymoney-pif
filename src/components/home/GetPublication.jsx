@@ -4,9 +4,6 @@ import { db } from "@/configFirebase";
 import { collection, getDocs } from "firebase/firestore";
 import { Link } from "react-router-dom";
 
-import { v4 } from "uuid";
-import { MdLibraryAdd } from "react-icons/md";
-
 const GetPublication = () => {
   const [data, setData] = useState([]);
 
@@ -36,10 +33,14 @@ const GetPublication = () => {
         {data.map((publication) => (
           <div
             key={publication.id}
-            className="shadow-md shadow-black rounded-xl p-4 flex flex-col gap-4"
+            className="shadow-lg shadow-black rounded-xl p-4 flex flex-col gap-4"
           >
             <h2 className="text-3xl capitalize ">{publication.title}</h2>
-            <img src={publication.urlImg} alt="" className="rounded-xl" />
+            <img
+              src={publication.urlImg}
+              alt=""
+              className="rounded-xl h-[200px] object-contain shadow-md shadow-primary "
+            />
             <p>{publication.description}</p>
             <Link to={`/publication/${publication.id}`}>
               <button className="btn btn-primary">detalles</button>

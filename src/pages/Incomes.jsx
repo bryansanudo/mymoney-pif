@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { selectEmail } from "@/redux/slice/authSlice";
 import Section from "@/components/common/Section";
 import { MdDeleteForever } from "react-icons/md";
+import { AiFillFileAdd } from "react-icons/ai";
 
 const Incomes = () => {
   const userEmail = useSelector(selectEmail);
@@ -69,7 +70,7 @@ const Incomes = () => {
             <input
               type="text"
               className="input input-primary input-sm"
-              placeholder="titulo"
+              placeholder="Titulo"
               name="titulo"
               onChange={handleChange}
               value={income.titulo}
@@ -77,35 +78,26 @@ const Incomes = () => {
             <input
               type="text"
               className="input input-primary input-sm"
-              placeholder="valor"
+              placeholder="Valor"
               name="valor"
               onChange={handleChange}
               value={income.valor}
             />
-            <button
-              className="flex items-center justify-center gap-4 text-white bg-black  py-1 px-4  focus:outline-none  hover:scale-105 duration-300 rounded-md"
-              onClick={addDb}
-            >
-              agregar ingreso
+            <button onClick={addDb}>
+              <AiFillFileAdd className="text-4xl hover:scale-110 duration-300" />
             </button>
           </form>
           {data ? (
-            <div className="max-w-[1000px] w-full flex flex-col shadow-lg  shadow-black p-10 rounded-xl gap-16">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
               {data.moves.incomes?.map((r, index) => (
                 <div
                   key={index}
-                  className="flex flex-col md:flex-row p-4 rounded-xl justify-between items-center shadow-green-500 shadow-md gap-4"
+                  className="stat shadow-lg shadow-black rounded-xl "
                 >
-                  <span className="capitalize font-bold text-lg">
-                    {r.titulo}
-                  </span>
-
-                  <div className="flex text-lg font-bold">
-                    <span> $</span>
-                    <span>{r.valor}</span>
-                  </div>
+                  <div className="stat-title capitalize ">{r.titulo}</div>
+                  <div className="stat-value text-green-500">${r.valor}</div>
                   <button onClick={() => eliminarTarea(r.id)}>
-                    <MdDeleteForever className="text-4xl hover:scale-110 duration-300" />
+                    <MdDeleteForever className="text-4xl hover:scale-110 duration-300 mx-auto mt-2" />
                   </button>
                 </div>
               ))}

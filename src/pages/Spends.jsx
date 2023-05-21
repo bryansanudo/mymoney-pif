@@ -90,22 +90,16 @@ const Spends = () => {
             </button>
           </form>
           {data ? (
-            <div className="max-w-[1000px] w-full flex flex-col shadow-lg  shadow-black p-10 rounded-xl gap-16">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
               {data.moves.spends?.map((r, index) => (
                 <div
                   key={index}
-                  className="flex flex-col md:flex-row p-4 rounded-xl justify-between items-center shadow-red-500 shadow-md gap-4"
+                  className="stat shadow-lg shadow-black rounded-xl "
                 >
-                  <span className="capitalize font-bold text-lg">
-                    {r.titulo}
-                  </span>
-
-                  <div className="flex text-lg font-bold">
-                    <span>$</span>
-                    <span>{r.valor}</span>
-                  </div>
+                  <div className="stat-title capitalize ">{r.titulo}</div>
+                  <div className="stat-value text-red-500">${r.valor}</div>
                   <button onClick={() => eliminarTarea(r.id)}>
-                    <MdDeleteForever className="text-4xl hover:scale-110 duration-300" />
+                    <MdDeleteForever className="text-4xl hover:scale-110 duration-300 mx-auto mt-2" />
                   </button>
                 </div>
               ))}
